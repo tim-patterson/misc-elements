@@ -39,7 +39,7 @@
           </thead>
           <tbody>
             <template is="dom-repeat" id="tableBody" items="{{data}}" as="row" sort="sortCmp">
-              <tr>
+              <tr class="selectable">
                 <td>{{row.0}}</td><td>{{row.1}}</td><td><iron-icon icon="check-circle"></td>
               </tr>
             </template>
