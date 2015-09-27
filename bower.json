@@ -1,7 +1,7 @@
 {
   "name": "misc-elements",
   "version": "0.1.0",
-  "description": "UI components for a batch scheduler",
+  "description": "Misc Polymer UI elements",
   "authors": [
     "Tim Patterson"
   ],
