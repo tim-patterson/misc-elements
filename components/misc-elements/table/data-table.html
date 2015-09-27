@@ -1,0 +1,43 @@
+<link rel="import" href="../../polymer/polymer.html">
+
+<link rel="import" href="sortable-table-behaviour.html">
+<link rel="import" href="table-styles.html">
+
+<dom-module id="data-table">
+
+  <template>
+    <style include="table-styles"></style>
+    <table>
+      <thead>
+        <tr>
+          <template is="dom-repeat" items="{{columnNames}}" as="columnName">
+            <th on-tap="sortByCol" colIdx$="{{index}}">
+              <span>{{columnName}}</span>
+              <iron-icon icon="{{getSortIcon(index, sortColumnIdx, sortDirection)}}"></iron-icon>
+            </th>
+          </template>
+        <tr>
+      </thead>
+      <tbody>
+        <template is="dom-repeat" id="tableBody" items="{{data}}" as="row" sort="sortCmp">
+          <tr>
+            <template is="dom-repeat" items="{{row}}" as="cell">
+              <td>{{cell}}</td>
+            </template>
+          </tr>
+        </template>
+      </tbody>
+    </table>
+  </template>
+
+  <script>
+    Polymer({
+      is : 'data-table',
+      
+      behaviors: [SortableTableBehaviour],
+      properties: {
+        columnNames: Array
+      }
+    });
+  </script>
+</dom-module>

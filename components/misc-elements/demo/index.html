@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+  <head>
+    <title>demo</title>
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="../../paper-styles/default-theme.html">
+    <link rel="import" href="../../paper-styles/typography.html">
+    <link rel="import" href="../table/data-table.html">
+    <link rel="import" href="../table/sortable-table-behaviour.html">
+    <link rel="import" href="../table/table-styles.html">
+    <style>
+      h2,
+      h3 {
+        font-family: 'Roboto', 'Noto', sans-serif;
+      }
+      h2 {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Tables</h2>
+    <dom-module id="custom-table">
+      <template>
+        <style include="table-styles"></style>
+        <table>
+          <thead>
+            <tr>
+              <th id="firstCol" on-tap="sortByCol" colIdx="0">
+                <span>First</span><iron-icon icon="{{getSortIcon(0, sortColumnIdx, sortDirection)}}"></iron-icon>
+              </th>
+              <th id="secondCol" on-tap="sortByCol" colIdx="1">
+                <span>Second</span><iron-icon icon="{{getSortIcon(1, sortColumnIdx, sortDirection)}}"></iron-icon>
+              </th>
+              <th>
+                <span>Actions</span>
+              </th>
+            <tr>
+          </thead>
+          <tbody>
+            <template is="dom-repeat" id="tableBody" items="{{data}}" as="row" sort="sortCmp">
+              <tr class="selectable">
+                <td>{{row.0}}</td><td>{{row.1}}</td><td><iron-icon icon="check-circle"></td>
+              </tr>
+            </template>
+          </tbody>
+        </table>
+      </template>
+
+      <script>
+        Polymer({
+          is : 'custom-table',
+          properties: {
+        	data: {
+              type: Array,
+              value : [['a',2], ['b',5], ['c',8]]
+        	}
+          },
+          behaviors: [SortableTableBehaviour]
+        });
+      </script>
+    </dom-module>
+    
+    
+    
+    <h3>Data Table</h3>
+    <data-table
+      data="[[1,2,1],[2,4,4],[3,6,9],[4,8,16]]"
+      column-names="[&quot;x&quot;,&quot;2x&quot;,&quot;x^2&quot;]">
+    </data-table>
+    <br>
+    <h3>Custom Table</h3>
+    <custom-table></custom-table>
+    
+    
+  </body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "name": "misc-elements",
+  "description": "Misc Polymer UI elements",
+  "authors": [
+    "Tim Patterson"
+  ],
+  "license": "",
+  "dependencies": {
+    "iron-icon": "PolymerElements/iron-icon#~1.0.4",
+    "iron-icons": "PolymerElements/iron-icons#~1.0.3",
+    "polymer": "Polymer/polymer#^1.1.0"
+  },
+  "devDependencies": {
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0",
+    "paper-styles": "PolymerElements/paper-styles#~1.0.11"
+  },
+  "homepage": "https://github.com/tim-patterson/misc-elements",
+  "_release": "71b58a6c99",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "71b58a6c998de6bcc2db7638f5a28cb7475947c3"
+  },
+  "_source": "git://github.com/tim-patterson/misc-elements.git",
+  "_target": "master",
+  "_originalSource": "tim-patterson/misc-elements",
+  "_direct": true
+}
