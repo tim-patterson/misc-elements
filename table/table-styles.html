@@ -1,0 +1,41 @@
+<dom-module id="table-styles">
+  <template>
+    <style>
+      :host {
+        display: block;
+        @apply(--paper-font-body1);
+      }
+
+      table {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        padding: 10px;
+        border-bottom-style: solid;
+        border-bottom-color: var(--divider-color, #e0e0e0);
+      }
+      td {
+        border-bottom-width: 1px;
+      }
+      th {
+        text-align: left;
+        border-bottom-width: 2px;
+        color: var(--secondary-text-color, #757575);
+        @apply(--paper-font-body2);
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      th[colIdx] {
+        cursor: pointer;
+      }
+    </style>
+  </template>
+</dom-module>
